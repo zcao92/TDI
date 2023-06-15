@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.str {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.std {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <style>
+    /* Define styles for the flowchart */
+
+    .flowchart {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        margin-left: 20px;
+    }
+
+    .flowchart::before,
+    .flowchart::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .flowchart li {
+        list-style-type: none;
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .flowchart li::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 20px;
+        height: 100%;
+        border-left: 2px solid #ccc;
+    }
+
+    .flowchart li:first-child::before {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .flowchart li:last-child::before {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 50%;
+    }
+
+    .flowchart li::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -20px;
+        width: 20px;
+        height: 2px;
+        background-color: #ccc;
+    }
+
+    .flowchart li:last-child::after {
+        height: 50%;
+    }
+
+    .flowchart li span {
+        background-color: #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .flowchart li span:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -20px;
+        width: 20px;
+        height: 2px;
+        background-color: #ccc;
+    }
+
+    .flowchart li:first-child span:before {
+        display: none;
+    }
+
+    /* Add custom colors for different steps */
+
+    .flowchart li:nth-child(2) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(3) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(4) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(5) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(6) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(7) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(8) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(9) span {
+        background-color: #e74c3c;
+    }
+
+    .flowchart li:nth-child(10) span {
+        background-color: #95a5a6;
+    }
+
+    .flowchart li:nth-child(11) span {
+        background-color: #d35400;
+    }
+
+    .flowchart li:nth-child(12) span {
+        background-color: #27ae60;
+    }
+
+    .flowchart li:nth-child(13) span {
+        background-color: #8e44ad;
+    }
+
+    .flowchart li:nth-child(14) span {
+        background-color: #16a085;
+    }
+
+    .flowchart li:nth-child(15) span {
+        background-color: #c0392b;
+    }
+
+    /* Adjust positioning for start and end steps */
+
+    .flowchart li:first-child {
+        margin-top: 20px;
+        padding-top: 10px;
+    }
+
+    .flowchart li:last-child {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    /* Increase font size for step numbers */
+
+    .flowchart li span {
+        font-size: 14px;
+    }
+    </style>
+</head>
+
+<body>
+    <ul class="flowchart">
+        <li><span>Start</span></li>
+        <li><span>Step 0: Import libraries and dataset</span>
+            <ul>
+                <li><span>Import libraries</span></li>
+                <li><span>Import dataset</span></li>
+            </ul>
+        </li>
+        <li><span>Step 1: Descriptive analysis</span>
+            <ul>
+                <li><span>Preview dataset</span></li>
+                <li><span>Shape of dataset</span></li>
+                <li><span>Features data-type</span></li>
+                <li><span>Statistical summary</span></li>
+                <li><span>Check for null values</span></li>
+                <li><span>Check for '?' in dataset</span></li>
+                <li><span>Checking the counts of label categories</span></li>
+            </ul>
+        </li>
+        <li><span>Step 2: Exploratory Data Analysis</span>
+            <ul>
+                <li><span>Univariate Analysis</span></li>
+                <li><span>Bivariate Analysis</span></li>
+                <li><span>Multivariate Analysis</span></li>
+            </ul>
+        </li>
+        <li><span>Step 3: Data preprocessing</span>
+            <ul>
+                <li><span>Replace missing values</span></li>
+                <li><span>Encode object columns</span></li>
+                <li><span>Split dataset into X and Y</span></li>
+                <li><span>Perform feature selection</span></li>
+                <li><span>Perform feature scaling</span></li>
+                <li><span>Handle imbalanced data</span></li>
+                <li><span>Split data into training and testing sets</span></li>
+            </ul>
+        </li>
+        <li><span>Step 4: Data Modelling</span>
+            <ul>
+                <li><span>Train a Random Forest Classifier</span></li>
+            </ul>
+        </li>
+        <li><span>Step 5: Model Evaluation</span>
+            <ul>
+                <li><span>Evaluate the model using accuracy score and f1 score</span></li>
+            </ul>
+        </li>
+        <li><span>Step 6: Hyperparameter Tuning</span>
+            <ul>
+                <li><span>Tune hyperparameters using RandomizedSearchCV</span></li>
+                <li><span>Train a Random Forest Classifier with the best parameters</span></li>
+                <li><span>Evaluate the tuned model</span></li>
+            </ul>
+        </li>
+        <li><span>Step 7: Webapp Development</span>
+            <ul>
+                <li><span>Using Flask to build the micro-framework</span></li>
+            </ul>
+        </li>
+        <li><span>End</span></li>
+    </ul>
+</body>
+
+</html>
